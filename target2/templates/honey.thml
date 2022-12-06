@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honeypot!</title>
+</head>
+<body>
+    <h2>Naughty bees!</h2>
+    <table>
+        <thead>
+           <tr>
+              <th>ID</th>
+              <th>IP address</th>
+              <th>User</th>
+              <th>Password</th>
+           </tr>
+        </thead>
+        
+        <tbody>
+           {% for attempt in attempts %}
+              <tr>
+                 <td>{{ attempt.id }}</td>
+                 <td>{{ attempt.address }}</td>
+                 <td>{{ attempt.user }}</td>
+                 <td>{{ attempt.password }}</td>
+              </tr>
+           {% endfor %}
+        </tbody>
+     </table>   
+</body>
+</html>

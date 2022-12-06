@@ -1,0 +1,17 @@
+services:
+  kali-attacker:
+    build: kali-attacker
+    stdin_open: true
+    tty: true
+  python-attacker:
+    build: python-attacker
+    stdin_open: true
+    tty: true
+  target1:
+    build: target1
+    tty: true
+  target2:
+    build: target2
+    ports:
+      - "8000:80"
+    tty: true
